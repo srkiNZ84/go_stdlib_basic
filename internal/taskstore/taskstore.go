@@ -54,15 +54,7 @@ func (ts *TaskStore) CreateTask(text string, tags []string, due time.Time) int {
 // GetTask retrieves a task from the store, by id. If no such id exists, an
 // error is returned.
 func (ts *TaskStore) GetTask(id int) (Task, error) {
-	ts.Lock()
-	defer ts.Unlock()
-
-	t, ok := ts.tasks[id]
-	if ok {
-		return t, nil
-	} else {
-		return Task{}, fmt.Errorf("task with id=%d not found", id)
-	}
+  // TODO implement the GetTask function
 }
 
 // DeleteTask deletes the task with the given id. If no such id exists, an error
